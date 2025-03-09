@@ -1,0 +1,32 @@
+{
+  "name": "react-sphere",
+  "version": "1.0.0",
+  "description": "this is react sphere by garima",
+ 
+  "scripts": {
+    "start":"parcel index.html",
+    "build":"parcel build index.html",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/garima-pathak/react-sphere.git"
+  },
+  "keywords": [],
+  "author": "Garima Pathak",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/garima-pathak/react-sphere/issues"
+  },
+  "homepage": "https://github.com/garima-pathak/react-sphere#readme",
+  "devDependencies": {
+    "parcel": "^2.13.3",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "browserslist":  "last 2 versions",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  }
+ 
+}
