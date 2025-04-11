@@ -2,10 +2,9 @@
   "name": "react-sphere",
   "version": "1.0.0",
   "description": "this is react sphere by garima",
- 
   "scripts": {
-    "start":"parcel index.html",
-    "build":"parcel build index.html",
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
     "test": "jest"
   },
   "repository": {
@@ -20,13 +19,13 @@
   },
   "homepage": "https://github.com/garima-pathak/react-sphere#readme",
   "devDependencies": {
-    "parcel": "^2.13.3",
+    "parcel": "^2.14.4",
     "process": "^0.11.10"
   },
   "dependencies": {
-    "browserslist":  "last 2 versions",
+    "browserslist": "last 2 versions",
     "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react-dom": "^19.0.0",
+    "react-router-dom": "^6.21.2"
   }
- 
 }
