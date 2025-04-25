@@ -9,9 +9,16 @@ import Error from "./components/Error";
 import RestaurantMenu from "./components/RestaurantMenu";
 //import Grocery from "./components/Grocery";
 
-const Grocery = lazy(() => import("./components/Grocery"));
-const About = lazy(() => import("./components/About"));
+// Chunking
+// Code Splitting
+// Dynamic Bundling
+// lazy Loading
+// on demand loading
+// dynamix import
 
+const Grocery = lazy(() => import("./components/Grocery"));
+
+const About = lazy(() => import("./components/About"));
 
 const AppLayout = () => {
   return (
