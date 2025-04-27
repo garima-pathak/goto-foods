@@ -20,9 +20,11 @@
   "homepage": "https://github.com/garima-pathak/react-sphere#readme",
   "devDependencies": {
     "parcel": "^2.14.4",
+    "postcss": "^8.5.3",
     "process": "^0.11.10"
   },
   "dependencies": {
+    "@tailwindcss/postcss": "^4.1.4",
     "browserslist": "last 2 versions",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
