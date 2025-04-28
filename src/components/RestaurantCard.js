@@ -27,5 +27,17 @@ const RestaurantCard = (props) => {
     );
   };
 
+  // Higher Order Component 
+  //input - RestaurantCard => RestaurantCardPromoted
+  export const withPromotedLabel = (RestaurantCard) => {
+    return (props) => { //here component is returned by HOC
+      return (  // component is a function that returns some piece of JSX
+        <div>
+          <label>Promoted</label>
+          <RestaurantCard {...props}/>
+        </div>
+      )
+    }
+  }
 
   export default RestaurantCard;

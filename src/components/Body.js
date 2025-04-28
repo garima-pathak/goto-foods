@@ -1,4 +1,4 @@
-import RestaurantCard from "./RestaurantCard";
+import RestaurantCard,{withPromotedLabel} from "./RestaurantCard";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
@@ -10,15 +10,18 @@ const Body = () => {
   const [filteredRestaurant,setFilteredRestaurant] =useState([]);
   const [searchText, setSearchText] = useState("");
 
+  const RestaurantCardPromoted = withPromotedLabel(RestaurantCard);
+
+
   useEffect(() => {
     fetchData();
   }, []);
 
-  console.log("Body Rendered");
+  console.log("Body Rendered",listOfRestaurants);
 
   const fetchData = async () => {
     const data = await fetch(
-      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.570317&lng=77.3218196&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+      "https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.5636272&lng=77.3725608&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
     );
 
     const json = await data.json();
@@ -127,7 +130,12 @@ const Body = () => {
       </div>
       <div className="flex flex-wrap">
         {(filteredRestaurant.length > 0 ? filteredRestaurant : listOfRestaurants).map((restaurant) => (
-          <Link key={restaurant?.info?.id} to={"/restaurants/"+restaurant?.info?.id}><RestaurantCard resData={restaurant} /></Link>
+          <Link key={restaurant?.info?.id} to={"/restaurants/"+restaurant?.info?.id}>
+            
+            {/**if the restaurant is promoted then add a promoted label to it */
+            restaurant.info.promoted? <RestaurantCardPromoted resData={restaurant} /> : <RestaurantCard resData={restaurant} />
+            }
+            </Link>
         ))}
       </div>
     </div>
