@@ -17,7 +17,6 @@ const Body = () => {
     fetchData();
   }, []);
 
-  console.log("Body Rendered",listOfRestaurants);
 
   const fetchData = async () => {
     const data = await fetch(

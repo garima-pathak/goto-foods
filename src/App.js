@@ -8,7 +8,7 @@ import Contact from "./components/Contact";
 import Error from "./components/Error";
 import RestaurantMenu from "./components/RestaurantMenu";
 //import Grocery from "./components/Grocery";
-import '../index.css';
+import './index.css';
 
 
 // Chunking
