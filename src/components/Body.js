@@ -1,8 +1,9 @@
 import RestaurantCard,{withPromotedLabel} from "./RestaurantCard";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import Shimmer from "./Shimmer";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import UserContext from "../utils/UserContext";
 
 const Body = () => {
   //Local State Variable - Super powerful variable
@@ -25,7 +26,7 @@ const Body = () => {
 
     const json = await data.json();
 
-    console.log(json);
+    //console.log(json);
     setListOfRestaurants(
       json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
@@ -41,6 +42,9 @@ const Body = () => {
       Loos like you're offline!! Please check your internet connection
     </h1>
     );
+
+  const {loggedInUser,setUserName}=useContext(UserContext);
+  
 
   let listOfRestaurantsJS = [
     {
@@ -124,6 +128,10 @@ const Body = () => {
         >
           Top Rated Restaurants
         </button>
+        </div>
+        <div className="search m-[1rem] p-[1rem] flex items-center">
+        <label>UserName : </label>
+        <input className="border border-black p-2" value={loggedInUser} onChange={(e)=>setUserName(e.target.value)}/>
         </div>
         
       </div>

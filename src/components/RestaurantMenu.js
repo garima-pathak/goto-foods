@@ -5,7 +5,7 @@ import { useParams } from "react-router-dom";
 import useRestaurantMenu from "../utils/useRestaurantMenu"
 import RestaurantCategory from "./RestaurantCategory";
 
-const RestaurantMenu = () => {
+let RestaurantMenu = () => {
   const { resId } = useParams();
 
   const resInfo = useRestaurantMenu(resId);
@@ -13,7 +13,7 @@ const RestaurantMenu = () => {
   const [showIndex,setShowIndex] = useState(null);
 
   const { name, cuisines, costForTwoMessage } =
-    resInfo?.cards[2]?.card?.card?.info || {};
+    resInfo?.cards?.[2]?.card?.card?.info || {};
 
   const { itemCards } =
     resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card
